@@ -27,3 +27,8 @@ ifdef T_A
  -include $(TOP)/configure/CONFIG_SITE.$(EPICS_HOST_ARCH).$(T_A)
 endif
 
+ifeq (linux-x86_64, $(findstring linux-x86_64, $(T_A)))
+export CC=/usr/bin/gcc
+export CXX=/usr/bin/g++
+endif
+
